@@ -1,0 +1,31 @@
+Package: wrds
+Title: Access 'Wharton Research Data Services' ('WRDS')
+Version: 0.0.1
+Authors@R:
+    person("Ulrich", "Atz", , "ulrich.atz@unibocconi.it", role = c("aut", "cre", "cph"),
+           comment = c(ORCID = "0000-0002-1719-3780"))
+Description: Provides simple functions for accessing data from 'Wharton Research
+    Data Services' ('WRDS'), a widely used financial database in academic
+    research. Includes credential management via the system keyring,
+    database tools, and functions for downloading generic tables, 'Compustat'
+    fundamentals, and linking tables.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+URL: https://github.com/statzhero/wrds
+BugReports: https://github.com/statzhero/wrds/issues
+Suggests:
+    testthat (>= 3.0.0),
+    withr
+Config/testthat/edition: 3
+Imports:
+    cli,
+    DBI,
+    dbplyr,
+    dplyr,
+    keyring,
+    rlang,
+    RPostgres,
+    tidylog
+
