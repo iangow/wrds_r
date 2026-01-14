@@ -11,17 +11,30 @@ op_wrds <- list(
 }
 
 .onAttach <- function(libname, pkgname) {
-  has_creds <- tryCatch(
-    {
-      keyring::key_get("wrds_user")
-      TRUE
-    },
-    error = function(e) FALSE
+  header <- cli::rule(
+    left = cli::style_bold("Checking WRDS credentials"),
+    right = paste0(pkgname, " ", utils::packageVersion(pkgname))
+  )
+  packageStartupMessage(header)
+
+
+  user <- tryCatch(
+    keyring::key_get("wrds_user"),
+    error = function(e) NULL
   )
 
-  if (!has_creds) {
-    cli::cli_alert_danger(
-      "wrds: No credentials found. Run {cli::col_cyan('wrds_set_credentials()')} to configure."
+  if (is.null(user)) {
+    msg <- paste0(
+      "\u26a0\ufe0f No credentials found. Run ",
+      cli::col_cyan("wrds_set_credentials()"),
+      " to configure."
+    )
+  } else {
+    msg <- paste0(
+      cli::col_green(cli::symbol$tick),
+      " Credentials found for user ",
+      cli::col_green(user)
     )
   }
+  packageStartupMessage(msg)
 }
