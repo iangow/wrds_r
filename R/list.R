@@ -135,8 +135,7 @@ describe_table <- function(wrds, library, table, n = 20, max_cols = 25) {
     "smallint" = "int",
     "bigint" = "int",
     "date" = "date",
-    "timestamp without time zone" = "dttm",
-    "timestamp with time zone" = "dttm",
+    "timestamp" = "dttm",
     "boolean" = "lgl"
   )
 

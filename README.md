@@ -1,6 +1,6 @@
 # wrds
 
-Simple functions for accessing data from Wharton Research Data Services (WRDS). 
+Simple functions for accessing data from [Wharton Research Data Services](https://wrds-www.wharton.upenn.edu/) (WRDS). A WRDS account is required.
 
 ## Installation
 

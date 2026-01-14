@@ -44,7 +44,7 @@ The lazy table can be filtered, selected, and mutated using dplyr verbs,
 which are translated to SQL and executed on the server:
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{get_table(wrds, "crsp", "msf") |>
-  filter(date >= "2020-01-01") |>
+  filter(date >= "2025-01-01") |>
   select(permno, date, ret, prc) |>
   collect()
 }\if{html}{\out{</div>}}
@@ -58,7 +58,7 @@ describe_table(wrds, "crsp", "msf")
 
 # Get a lazy table and build your query
 get_table(wrds, "crsp", "msf") |>
-  dplyr::filter(date >= "2020-01-01") |>
+  dplyr::filter(date >= "2025-01-01") |>
   dplyr::select(permno, date, ret, prc, vol) |>
   dplyr::collect()
 
@@ -71,7 +71,7 @@ get_table(wrds, "crsp", "dsf",
 
 # Access any table in any library
 get_table(wrds, "ibes", "statsum_epsus") |>
-  dplyr::filter(fpedats >= "2020-01-01") |>
+  dplyr::filter(fpedats >= "2025-01-01") |>
   dplyr::collect()
 
 wrds_disconnect(wrds)
